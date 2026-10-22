@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: cronjob
-  namespace: my-namespace
+  namespace: mateapp
 spec:
   schedule: "*/4 * * * *"
   concurrencyPolicy: Allow
@@ -15,7 +15,7 @@ spec:
         spec:
           containers:
             - name: busyboxplus
-              image: ikulyk404/busyboxplus:curl
+              image: busyboxplus:curl
               command:
                 - /bin/sh
                 - -c
